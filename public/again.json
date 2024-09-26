@@ -1,0 +1,382 @@
+[
+  {
+    "collegeName": "Stanford University",
+    "collegeImage": "https://www.collegeright.com/wp-content/uploads//2011/08/intro_about-800x532-1.jpg",
+    "admissionDate": "2024-06-01",
+    "admissionProcess": {
+      "overview": "Submit online application, standardized test scores, letters of recommendation, and personal essays.",
+      "detailedSteps": [
+        "Submit Common or Coalition application.",
+        "Submit SAT/ACT scores (optional for 2024).",
+        "Submit 2-3 letters of recommendation.",
+        "Submit personal essays reflecting your background and experiences.",
+        "Complete financial aid application for need-based aid."
+      ],
+      "operationalDetails": "Applications are reviewed in a holistic manner, considering both academic performance and extracurricular activities. Interviews are offered selectively.",
+      "fees": "$90 application fee, waivers available."
+    },
+    "events": [
+      {
+        "name": "Stanford Commencement",
+        "date": "2024-06-12",
+        "eventImage": "https://localist-images.azureedge.net/photos/39174008324658/square_300@2x/d8c422716af3a987adea4f6733a3aedc13cf4ee9.jpg",
+        "description": "The annual commencement ceremony at Stanford University celebrates the achievements of the graduating class. The event is held in the Stanford Stadium and features keynote speeches from prominent leaders in various fields.",
+        "highlight": "Notable speakers include global leaders and Nobel laureates."
+      },
+      {
+        "name": "Research Symposium",
+        "date": "2024-05-15",
+        "eventImage": "https://localist-images.azureedge.net/photos/41155346020043/square_300@2x/7098f05f956910d23cea463f0fb4b8cb8fb9a91a.jpg",
+        "description": "The Stanford Research Symposium highlights the cutting-edge research conducted by faculty and students across various disciplines. The event showcases projects in AI, biotechnology, and more.",
+        "highlight": "Presentations by leading researchers in artificial intelligence."
+      }
+    ],
+    "researchHistory": "Stanford University has a pioneering reputation in artificial intelligence and biotechnology research. Over the last decade, Stanford researchers have contributed to numerous groundbreaking projects, including the development of machine learning algorithms and gene-editing technologies. Stanford's interdisciplinary approach fosters collaboration between different departments, driving innovation across technology and healthcare. The university continues to push the boundaries of knowledge, providing new insights into the ethical implications of AI, while advancing personalized medicine and treatment strategies in biotechnology. These research efforts have earned Stanford international recognition and substantial research funding.",
+    "sports": ["Basketball", "Football"],
+    "sportsCategories": [
+      {
+        "sportsName": "basketball",
+        "description": "Stanford's men's and women's basketball teams are nationally recognized and compete in the Pac-12 conference. The teams have a rich history of success, with multiple championships to their credit.",
+        "sportsImage": "https://render.vivenu.com/image?url=https://s3.eu-central-1.amazonaws.com/yt-s3/3e24880a-cf8b-435c-bdd5-14ebe32d79e2.png&forceJPEG=true&width=1210"
+      },
+      {
+        "sportsName": "football",
+        "description": "Stanford football competes in NCAA Division I, with a long-standing rivalry with teams like USC and Cal. The team has produced numerous NFL players and is known for its academic-athletic balance.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQqVKjAHPqyctxpQMktm_aUy__9h9KTLNFaA&s"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "AI Ethics and Machine Learning",
+        "researchImage": "https://assets.publishing.service.gov.uk/media/66be18633effd5b79ba49178/AI_Ethics_graphics__Shutterstock_.jpg",
+        "description": "This research explores the ethical considerations in AI development, including bias mitigation, transparency, and accountability in machine learning algorithms.",
+        "benefitOfResearch": "Improves fairness and equity in AI systems used across industries."
+      },
+      {
+        "title": "CRISPR in Biotechnology",
+        "researchImage": "https://www.biocom.org/wp-content/uploads/2022/11/crispr.jpg",
+        "description": "Stanford researchers are at the forefront of gene-editing technologies, using CRISPR to develop new treatments for genetic diseases and advancing biotechnology research.",
+        "benefitOfResearch": "Pioneers new therapies for previously untreatable genetic conditions."
+      }
+    ],
+    "collegeRating": 4.9,
+    "numberOfResearch": 520
+  },
+  {
+    "collegeName": "Harvard University",
+    "collegeImage": "https://www.appily.com/sites/default/files/styles/max_1200/public/images/hero/college/166027_hero.jpg?itok=ATzo5Oye",
+    "admissionDate": "2024-05-30",
+    "admissionProcess": {
+      "overview": "Common application, high school transcripts, SAT/ACT scores, and interview.",
+      "detailedSteps": [
+        "Submit Common or Universal application.",
+        "Send official high school transcripts.",
+        "Submit SAT/ACT scores (optional for 2024).",
+        "Complete Harvard-specific essays and short answers.",
+        "Participate in an interview (if requested)."
+      ],
+      "operationalDetails": "Harvard’s admission process is highly selective, with a focus on academic excellence, leadership, and unique personal experiences. The university evaluates candidates holistically, considering both intellectual curiosity and character.",
+      "fees": "$75 application fee, fee waivers available."
+    },
+    "events": [
+      {
+        "name": "Harvard Innovation Challenge",
+        "date": "2024-03-21",
+        "eventImage": "https://news.harvard.edu/wp-content/uploads/2022/05/1.-President-Bacow2500.jpg",
+        "description": "The Harvard Innovation Challenge brings together students from across disciplines to pitch innovative solutions to global challenges. Participants showcase their ideas to a panel of experts, competing for seed funding.",
+        "highlight": "Winning teams receive mentorship and funding to develop their ideas."
+      },
+      {
+        "name": "Law School Lecture Series",
+        "date": "2024-04-18",
+        "eventImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0zvvw8OQ0N1J3fLXDp6Y2g6ELFQgZoC5phQ&s",
+        "description": "The Harvard Law School Lecture Series features distinguished legal scholars and practitioners discussing contemporary legal issues. This year’s focus is on constitutional law and human rights.",
+        "highlight": "Keynote speakers include Supreme Court justices and prominent legal academics."
+      }
+    ],
+    "researchHistory": "Harvard University has long been at the forefront of research in various fields, including law, medicine, and the social sciences. Harvard Law School's research has shaped national and international legal frameworks, while the university's medical school has been a leader in clinical trials and innovations in healthcare. Harvard's commitment to social sciences research has produced influential studies on poverty, education, and political systems, furthering societal advancements. Collaborative research between departments often results in groundbreaking discoveries, with substantial funding and resources supporting a diverse range of scholarly activities.",
+    "sports": ["Rowing", "Soccer"],
+    "sportsCategories": [
+      {
+        "sportsName": "rowing",
+        "description": "Harvard’s rowing teams are some of the best in the country, consistently ranking at the top in national competitions. They compete in the Ivy League and regularly take part in international regattas.",
+        "sportsImage": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Harvard_Rowing_Crew_at_Henley_2004_-2.JPG"
+      },
+      {
+        "sportsName": "soccer",
+        "description": "Harvard’s men’s and women’s soccer teams are top competitors in the Ivy League, known for their strong defense and strategic play. The teams attract talent from around the world.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTEH3URy9Qjm-UayOT4_a5O_sCqh21cCPKw&s"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Global Health Policy Research",
+        "researchImage": "https://globalhealth.harvard.edu/wp-content/uploads/2024/01/HGHI_symposium191-scaled.jpg",
+        "description": "Harvard’s research on global health policy focuses on improving healthcare delivery in low-income countries, with a particular emphasis on infectious diseases and health system reforms.",
+        "benefitOfResearch": "Informs international health policies and improves global health outcomes."
+      },
+      {
+        "title": "Legal Reforms and Social Justice",
+        "researchImage": "https://pll.harvard.edu/sites/default/files/styles/16_9_medium/public/course/b7d37bb2-5f79-4792-89e0-cf5ec68203f9-ad98268b4db1.jpeg?itok=Wy-7QhlD",
+        "description": "Harvard’s legal research examines systemic inequalities in the justice system, offering policy recommendations to address racial and socioeconomic disparities.",
+        "benefitOfResearch": "Contributes to legal reforms aimed at creating a more just and equitable society."
+      }
+    ],
+    "collegeRating": 4.8,
+    "numberOfResearch": 810
+  },
+
+  {
+    "collegeName": "Massachusetts Institute of Technology (MIT)",
+    "collegeImage": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202109/MIT_Better-World-Campaign_0.jpg?itok=gThmaUrp",
+    "admissionDate": "2024-05-15",
+    "admissionProcess": {
+      "overview": "Submit online application, recommendation letters, and detailed academic reports.",
+      "detailedSteps": [
+        "Complete the MIT application online.",
+        "Provide two letters of recommendation.",
+        "Submit official academic transcripts.",
+        "Complete required standardized tests.",
+        "Submit a portfolio of work (if applicable)."
+      ],
+      "operationalDetails": "Applications are evaluated holistically, focusing on academic achievements and potential contributions to the MIT community.",
+      "fees": "$75 application fee, waivers available."
+    },
+    "events": [
+      {
+        "name": "MIT Tech Day",
+        "date": "2024-04-22",
+        "eventImage": "https://wp.technologyreview.com/wp-content/uploads/2022/08/SO22_MIT_TechDay_crop.jpeg?w=1600",
+        "description": "An annual event showcasing innovative student projects and technology breakthroughs.",
+        "highlight": "Involves presentations from startups and leading tech companies."
+      },
+      {
+        "name": "Physics Research Conference",
+        "date": "2024-05-11",
+        "eventImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5CCkgXxWfTfXk1hgj1mkc1BXoWmhdfJkkdQ&s",
+        "description": "Gathering of leading physicists to discuss advancements in physical sciences.",
+        "highlight": "Features keynote speakers from top research institutions."
+      }
+    ],
+    "researchHistory": "MIT has a longstanding reputation for pioneering research in technology and physical sciences. Its contributions span artificial intelligence, robotics, and sustainable energy. The collaborative environment encourages groundbreaking discoveries and innovation across various disciplines, earning MIT a leading position in global rankings and substantial funding from private and public sectors.",
+    "sports": ["Swimming", "Tennis"],
+    "sportsCategories": [
+      {
+        "sportsName": "swimming",
+        "description": "The MIT swim team competes at a high level in NCAA Division III, consistently achieving top rankings.",
+        "sportsImage": "https://alum.mit.edu/sites/default/files/images/swimmer.jpeg"
+      },
+      {
+        "sportsName": "tennis",
+        "description": "MIT's men's and women's tennis teams are known for their competitive spirit and regional success.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM_wW3lql-jZkiHy3Fb_oEi1ktyjPKqhA4fA&s"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "AI in Healthcare",
+        "researchImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb9Q2zvSMIcHFsHw-onvpVywZ5Gd_lKNRsFA&s",
+        "description": "Research focused on applying AI technologies to improve healthcare outcomes and patient care.",
+        "benefitOfResearch": "Advances diagnostic processes and treatment personalization."
+      },
+      {
+        "title": "Quantum Computing Innovations",
+        "researchImage": "https://cdn.geekwire.com/wp-content/uploads/2019/03/2018_10_31_Physics-Labs-2334.jpg",
+        "description": "Explores the development of quantum computing technologies and their potential applications.",
+        "benefitOfResearch": "Revolutionizes computational capabilities for complex problem-solving."
+      }
+    ],
+    "collegeRating": 4.95,
+    "numberOfResearch": 1020
+  },
+  {
+    "collegeName": "University of California, Berkeley",
+    "collegeImage": "https://www.universityofcalifornia.edu/sites/default/files/styles/collage_4_item_large_wide/public/2021-11/2018_04_11_UCB_day3-136.jpg?h=f2fcf546&itok=mNHnHPXz",
+    "admissionDate": "2024-05-20",
+    "admissionProcess": {
+      "overview": "Requires online application, personal statements, and standardized test scores.",
+      "detailedSteps": [
+        "Submit the UC application online.",
+        "Provide personal statements detailing your experiences.",
+        "Send official high school transcripts.",
+        "Submit SAT/ACT scores (optional for 2024).",
+        "Participate in an interview (if requested)."
+      ],
+      "operationalDetails": "UC Berkeley's admission process emphasizes academic excellence, personal insight, and community engagement, assessing candidates holistically.",
+      "fees": "$70 application fee, fee waivers available."
+    },
+    "events": [
+      {
+        "name": "Berkeley Research Conference",
+        "date": "2024-03-28",
+        "eventImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFCXvH6RGcbdT9nFagVjvi9KAStY_7o77eg&s",
+        "description": "A platform for researchers to present their findings and network with peers.",
+        "highlight": "Showcases innovative research from diverse fields."
+      },
+      {
+        "name": "Annual Sports Meet",
+        "date": "2024-06-02",
+        "eventImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUZLkS7n3GyDrFw4_vntufddl7onIvG9jxsw&s",
+        "description": "A vibrant celebration of athletic talent, featuring competitions across various sports.",
+        "highlight": "Encourages community participation and school spirit."
+      }
+    ],
+    "researchHistory": "UC Berkeley is renowned for its significant contributions to environmental sciences and policy research. The university leads in social science research and technological advancements, producing impactful studies that shape public policy and inform sustainable practices. Collaboration across disciplines fosters groundbreaking discoveries and positions Berkeley at the forefront of academia globally.",
+    "sports": ["Track and Field", "Baseball"],
+    "sportsCategories": [
+      {
+        "sportsName": "track_and_field",
+        "description": "Berkeley's track and field teams are recognized for their championship-winning performances and competitive spirit.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6mxR2L03FgjtbwpZBNUCdhOzhsczlOk0Pg&s"
+      },
+      {
+        "sportsName": "baseball",
+        "description": "The competitive baseball program at Berkeley competes at the NCAA Division I level, attracting top talent.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM3goTzIAgqIse2YE0VZN8ITiMI-VUzZRmkA&s"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Sustainable Agriculture Research",
+        "researchImage": "https://cdn.prod.website-files.com/621d34b1395c9811cef11ae2/63ec1553da0976f1fc9b2f4e_CSR%20Website%20Article%20Main%20Image.jpg",
+        "description": "Focuses on innovative agricultural practices to enhance sustainability and food security.",
+        "benefitOfResearch": "Promotes environmental stewardship and agricultural resilience."
+      },
+      {
+        "title": "Climate Change Policy Studies",
+        "researchImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJtKbl1saVWg9yu392003zIVoFyw4MZer6kg&s",
+        "description": "Examines policies addressing climate change impacts and promoting global sustainability.",
+        "benefitOfResearch": "Informs legislative action for effective climate change mitigation."
+      }
+    ],
+    "collegeRating": 4.7,
+    "numberOfResearch": 730
+  },
+
+  {
+    "collegeName": "Yale University",
+    "collegeImage": "https://admissions.yale.edu/sites/default/files/styles/main-carousel-image--1280x850/public/home-main-carousel-images/crosscampus2019.png?itok=QJDBkwgU",
+    "admissionDate": "2024-06-10",
+    "admissionProcess": {
+      "overview": "Online application, personal essays, and interviews are required.",
+      "detailedSteps": [
+        "Submit the Common Application or Coalition Application.",
+        "Provide official high school transcripts.",
+        "Complete Yale-specific essays detailing your achievements.",
+        "Participate in an interview if invited.",
+        "Submit any required financial aid documents."
+      ],
+      "operationalDetails": "Yale evaluates candidates holistically, emphasizing academic excellence, creativity, and leadership.",
+      "fees": "$80 application fee, with waivers available for eligible students."
+    },
+    "events": [
+      {
+        "name": "Yale Leadership Summit",
+        "date": "2024-05-15",
+        "eventImage": "https://som.yale.edu/sites/default/files/styles/open_graph/public/featured_image/_DSC6627.jpg?h=9dd951d5&itok=V-jor_QB",
+        "description": "An annual gathering that fosters leadership skills through workshops and discussions.",
+        "highlight": "Featuring prominent leaders sharing insights on effective leadership."
+      },
+      {
+        "name": "Medical Research Seminar",
+        "date": "2024-04-29",
+        "eventImage": "https://ysm-res.cloudinary.com/image/upload/c_crop,x_0,y_271,w_1600,h_898/c_fill,f_auto,q_auto:eco,dpr_3,w_920/v1/yms/prod/a93876d1-f492-4bf0-b5b5-20a5a1d12f3a",
+        "description": "A seminar showcasing cutting-edge medical research and innovations.",
+        "highlight": "Involves presentations from leading medical researchers."
+      }
+    ],
+    "researchHistory": "Yale University is a leader in social sciences and medical research, recognized for its contributions to public health and policy studies. Its researchers have made significant impacts on health systems, contributing innovative solutions to pressing global issues. Yale’s collaborative environment encourages interdisciplinary studies, producing influential findings that inform both academic discourse and practical applications in health care. The university's commitment to research excellence has established it as a pivotal player in addressing societal challenges through evidence-based insights.",
+    "sports": ["Rowing", "Lacrosse"],
+    "sportsCategories": [
+      {
+        "sportsName": "rowing",
+        "description": "Yale boasts a strong rowing program with a legacy of success in national competitions.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7fMJ9_jRktYmCShN_A1YKXUoPNytw_UkkUQ&s"
+      },
+      {
+        "sportsName": "lacrosse",
+        "description": "The men's lacrosse team competes at a high level in NCAA Division I, known for its strategic play.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHNWnqqedNLgn7ZVRswd7gR0I5i3nLCGB9iQ&s"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Public Health Innovations",
+        "researchImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTomJ0gC2i9eMdf0BeBM7tT7sqYRcEwZdiTHQ&s",
+        "description": "Research focusing on innovative approaches to public health challenges, including infectious disease control.",
+        "benefitOfResearch": "Enhances public health outcomes through evidence-based strategies."
+      },
+      {
+        "title": "Social Science and Policy Studies",
+        "researchImage": "https://isps.yale.edu/sites/default/files/resize/images/P1010086-600x450.JPG",
+        "description": "Explores the intersection of social sciences and policy-making, informing practices and regulations.",
+        "benefitOfResearch": "Shapes policies that address social inequities and improve community health."
+      }
+    ],
+    "collegeRating": 4.85,
+    "numberOfResearch": 720
+  },
+  {
+    "collegeName": "Princeton University",
+    "collegeImage": "https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2020/06/20170816_CL_DJA_152%281%29.jpg?itok=hWl2CRrn",
+    "admissionDate": "2024-05-25",
+    "admissionProcess": {
+      "overview": "Common application, letters of recommendation, and standardized test scores required.",
+      "detailedSteps": [
+        "Submit the Common Application or Universal College Application.",
+        "Provide official high school transcripts.",
+        "Submit SAT/ACT scores (optional for 2024).",
+        "Complete Princeton-specific essays reflecting your motivations.",
+        "Submit recommendations from teachers and counselors."
+      ],
+      "operationalDetails": "Princeton’s admissions process is rigorous, focusing on academic excellence, personal character, and leadership potential.",
+      "fees": "$70 application fee, with waivers available based on financial need."
+    },
+    "events": [
+      {
+        "name": "Princeton Commencement",
+        "date": "2024-06-12",
+        "eventImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT10RiRp9QYPIzuMwsW6-Wl06PvKC129JHfwQ&s",
+        "description": "The annual ceremony celebrating the achievements of graduates with speeches and awards.",
+        "highlight": "Keynote address by prominent figures in academia and society."
+      },
+      {
+        "name": "Economics Conference",
+        "date": "2024-03-18",
+        "eventImage": "https://irs.princeton.edu/sites/g/files/toruqf276/files/styles/freeform_750w/public/2022-04/NLS-E2022_1139.jpg?itok=0xpNQoto",
+        "description": "An influential conference where leading economists discuss contemporary economic issues.",
+        "highlight": "Involves presentations by renowned economists and policy-makers."
+      }
+    ],
+    "researchHistory": "Princeton University is renowned for its economic and political research, contributing significantly to understanding complex social systems and governance. The university’s commitment to academic rigor has led to influential studies in economics, law, and public policy, with researchers collaborating across disciplines to produce impactful findings. Princeton's research efforts have garnered extensive funding, facilitating cutting-edge work that informs both national and international policy discussions. This legacy of excellence positions Princeton as a leader in addressing critical global challenges through scholarly inquiry.",
+    "sports": ["Football", "Basketball"],
+    "sportsCategories": [
+      {
+        "sportsName": "football",
+        "description": "Princeton football has a storied history in NCAA Division I, with a strong tradition of success.",
+        "sportsImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkR3lar-JsOhzP1ftPCSJhEfTUUIyBdYiXkw&s"
+      },
+      {
+        "sportsName": "basketball",
+        "description": "The men's and women's basketball teams compete vigorously in the Ivy League, achieving national recognition.",
+        "sportsImage": "https://plus.unsplash.com/premium_photo-1676634832558-6654a134e920?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFza2V0YmFsbCUyMGdhbWV8ZW58MHx8MHx8fDA%3D"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Economic Policy Analysis",
+        "researchImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu4YotA3YJq2ivA1pwT51QH4wjtChNm8zieQ&s",
+        "description": "Research focusing on economic policies and their effects on society, providing data-driven insights.",
+        "benefitOfResearch": "Aids in formulating effective economic policies for sustainable growth."
+      },
+      {
+        "title": "Political Systems and Governance",
+        "researchImage": "https://politics.princeton.edu/sites/default/files/styles/free_style/public/images/Screen%20Shot%202022-06-13%20at%203.56.58%20PM.jpg?h=fdec4ce7&itok=kSvtDyic",
+        "description": "Explores the dynamics of political systems and their impact on governance and social justice.",
+        "benefitOfResearch": "Contributes to understanding and improving democratic processes."
+      }
+    ],
+    "collegeRating": 4.75,
+    "numberOfResearch": 640
+  }
+]
