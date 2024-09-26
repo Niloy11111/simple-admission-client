@@ -5,11 +5,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import UseReviews from "../../hooks/UseReviews";
 const Reviews = () => {
   const [reviews] = UseReviews();
+
+  console.log(reviews);
   return (
     <div>
-      <h2 className="headTitle mt-20 ">Reviews from Students</h2>
+      <h2 className="text-3xl  text-center lg:text-4xl  font-extrabold uppercase mt-8 lg:mt-10 mb-8  lg:mb-16 ">
+        Reviews from Students
+      </h2>
 
-      <div className="-mt-10">
+      <div className="">
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {reviews.map((item) => (
             <SwiperSlide className=" text-white " key={item._id}>

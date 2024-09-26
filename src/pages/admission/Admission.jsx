@@ -136,7 +136,7 @@ const Admission = () => {
       <h1 className="name text-center">Exlpore Colleges</h1>
 
       <div onClick={openModal} className="bookmarkContainer cursor-pointer">
-        <div className="w-full mx-auto grid grid-cols-3 gap-2 mt-16 ">
+        <div className="w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-16 ">
           {colleges.map((item) => (
             <div
               onClick={() => setCorrentCollege(item)}

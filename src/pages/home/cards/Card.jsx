@@ -17,7 +17,7 @@ const Card = ({ card }) => {
   } = card;
   return (
     <div className="mb-10">
-      <div className="flex items-center  gap-10">
+      <div className="flex flex-col lg:flex-row items-center  gap-10">
         <div>
           <img className="w-[700px] " src={collegeImage} alt="" />
         </div>

@@ -82,7 +82,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/candidateInfoEmail?email=${user?.email}`)
+      fetch(
+        `https://simple-admission-server.vercel.app/candidateInfoEmail?email=${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => setMyCollege(data));
     }

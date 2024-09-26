@@ -10,7 +10,9 @@ const Banner = () => {
   const { setCollegeData } = useContext(AuthContext);
 
   const onSubmit = async (data) => {
-    fetch(`http://localhost:5000/allColleges?collegeName=${data.collegeName}`)
+    fetch(
+      `https://simple-admission-server.vercel.app/allColleges?collegeName=${data.collegeName}`
+    )
       .then((res) => res.json())
       .then((data) => setCollegeData(data));
 
@@ -39,28 +41,15 @@ const Banner = () => {
                   {...register("collegeName", { required: true })}
                   name="collegeName"
                   id="field-id"
-                  className="pl-8 border border-[#444]  py-2 outline-none bg-white"
+                  className="pl-8 w-[150px] lg:[250px] border border-[#444]  py-2 outline-none bg-white"
                   type="text"
                   placeholder="Find Food"
                 />
-                <button className="ml-2 lg:ml-4  px-7 py-2.5 border border-[#444]  duration-300 ">
+                <button className="ml-2 lg:ml-4 px-5 lg:px-7 py-2.5 border border-[#444]  duration-300 ">
                   Explore
                 </button>
               </form>
               <BsSearch className="absolute left-3 "></BsSearch>
-
-              {/* <input
-                name="category"
-                onChange={(e) => setSearchCollege(e.target.value)}
-                id="field-id"
-                className="pl-8 border border-[#444] lg:w-2/4 w-3/5 py-2 outline-none bg-white"
-                type="text"
-                placeholder="Search colleges"
-              />
-
-              <button className="ml-2 lg:ml-4  px-7 py-2.5 border border-[#444]  duration-300 ">
-                Explore
-              </button> */}
             </div>
           </div>
         </div>

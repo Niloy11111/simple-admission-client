@@ -53,11 +53,11 @@ const Footer = () => {
         <h2 className="font-bold mb-3 uppercase">Popular University</h2>
         <ul>
           <li className="">Harvard University</li>
-          <li className="">Harvard University</li>
-          <li className="">Harvard University</li>
-          <li className="">Harvard University</li>
-          <li className="">Harvard University</li>
-          <li className="">Harvard University</li>
+          <li className="">Massachusetts Inst. of Tech.</li>
+          <li className="">Stanford University</li>
+          <li className="">University of California, Berkeley</li>
+          <li className="">Yale University</li>
+          <li className="">Princeton University</li>
         </ul>
       </div>
 
@@ -73,8 +73,8 @@ const Footer = () => {
           />
 
           <button
-            className=" hover:bg-textColor
-           bg-texttext-textColor w-full py-2.5 transition-all text-white font-Inter duration-300  rounded mt-3"
+            className=" hover:bg-textColor border border-[#444]
+           bg-texttext-textColor w-full py-2.5 transition-all hover:text-white font-Inter duration-300  rounded mt-3"
           >
             SUBSCRIBE{" "}
           </button>

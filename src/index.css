@@ -11,11 +11,11 @@
 }
 
 .headTitle {
-  @apply text-3xl  text-center lg:text-4xl  font-extrabold uppercase mb-16;
+  @apply text-3xl  text-center lg:text-4xl  font-extrabold uppercase mt-8 lg:mt-0 mb-8  lg:mb-16;
 }
 
 .name {
-  @apply text-4xl font-semibold;
+  @apply text-3xl lg:text-4xl font-semibold;
 }
 .subName {
   @apply text-2xl font-semibold;

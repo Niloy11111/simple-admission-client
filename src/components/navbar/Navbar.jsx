@@ -160,12 +160,12 @@ const NavBar = () => {
           <div tabIndex={0} role="button" className=" lg:hidden">
             <FaBars className="text-2xl "></FaBars>
           </div>
-          {/* <ul
+          <ul
             tabIndex={0}
-            className="lg:hidden menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#F7F7F7] w-52  absolute -right-[20px] top-4 "
+            className="menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#F7F7F7] w-52 text-textColor absolute -left-[120px] -top-5 "
           >
             {user ? navLinks : navlinksBeforeLogin}
-          </ul> */}
+          </ul>
         </div>
 
         <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ const NavBar = () => {
             <div className="flex gap-3 items-center">
               <div className="">
                 <Link to={`/profile`}>
-                  <h2 className=" flex items-center gap-1 cursor-pointer font-semibold">
+                  <h2 className="  cursor-pointer font-semibold">
                     {user?.displayName}
                   </h2>
                 </Link>

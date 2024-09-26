@@ -36,14 +36,14 @@ const MyCollege = () => {
   // console.log(mycollege[0].collegeName);
 
   return (
-    <div className="mt-20">
+    <div className="my-20">
       {mycollege ? (
         mycollege.map((item) => (
           <div key={mycollege[0]._id}>
-            <div className="flex gap-10">
+            <div className="flex flex-col lg:flex-row gap-10">
               <div>
                 <img
-                  className="w-[700px]"
+                  className="lg:w-[700px]"
                   src={mycollege[0].collegeImage}
                   alt=""
                 />
@@ -52,7 +52,7 @@ const MyCollege = () => {
                 <h1 className="text-3xl font-semibold mb-3">Add a Review</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <textarea
-                    className="outline-none border-[#444] border w-[370px] lg:w-[600px]  mb-3 pl-2 pt-2  text-sm"
+                    className="outline-none border-[#444] border w-[280px] lg:w-[600px]  mb-3 pl-2 pt-2  text-sm"
                     {...register("review", { required: true })}
                     id=""
                     cols="50"
