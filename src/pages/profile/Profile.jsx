@@ -30,7 +30,7 @@ const Profile = () => {
     try {
       const candidateRes = await axiosPublic.patch(
         `/addCandidateInfoAsUserInfo/${
-          firebaseUser ? firebaseUser.email : user?.email
+          firebaseUser.email ? firebaseUser.email : user?.email
         }`,
         updatedUser
       );

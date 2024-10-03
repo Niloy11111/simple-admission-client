@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { FaFacebook, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../../hooks/UseAuth";
@@ -57,6 +57,7 @@ const Login = () => {
         collegeRating: "",
         numberOfResearch: "",
       };
+
       const exist = users.find((item) => item.email === user.email);
 
       if (exist) {
@@ -169,7 +170,6 @@ const Login = () => {
   const handleGithubLogin = () => {
     const inputValue = githubEmailRef.current.value;
 
-    // Simple email validation regex
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailPattern.test(inputValue)) {
@@ -209,7 +209,11 @@ const Login = () => {
           numberOfResearch: "",
         };
 
-        const exist = users.find((item) => item.email === user.email);
+        setUser(user);
+
+        const exist = users.find((item) => item.email === inputValue);
+
+        console.log("exist", exist);
 
         if (exist) {
           Swal.fire({
@@ -227,6 +231,7 @@ const Login = () => {
                 navigate("/login");
                 refetch();
                 setUser(user);
+                localStorage.setItem("currentUser", JSON.stringify(user));
               }
             })
             .catch((err) => {
@@ -249,21 +254,46 @@ const Login = () => {
                 </h2>
                 <div className="flex">
                   <div
-                    onClick={() => facebookSignIn()}
                     className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
-                  >
-                    <div className="flex items-center gap-2">
-                      <FaFacebook className="text-2xl"></FaFacebook>
-                    </div>
-                  </div>
-                  <div
-                    onClick={handleGithubLogin}
-                    className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
+                    onClick={() =>
+                      document.getElementById("my_modal_1").showModal()
+                    }
                   >
                     <div className="flex items-center gap-2">
                       <FaGithub className="text-2xl"></FaGithub>
                     </div>
                   </div>
+
+                  <dialog id="my_modal_1" className="modal">
+                    <div>
+                      <div className="modal-box">
+                        <input
+                          id="githubEmail"
+                          className="modalField"
+                          required
+                          type="email"
+                          required
+                          placeholder="Your Name"
+                          ref={githubEmailRef}
+                        />
+
+                        <button
+                          onClick={handleGithubLogin}
+                          className="mt-5 buttonOrange px-5 py-2 rounded-lg"
+                          type="submit"
+                        >
+                          Submit
+                        </button>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            <button className="btn text-white btn-sm btn-accent">
+                              Close
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </dialog>
 
                   <div
                     onClick={handleGoogleLogin}
