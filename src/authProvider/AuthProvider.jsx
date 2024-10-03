@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     } else {
       axios
         .get(
-          `http://localhost:5000/users/email/${
+          `https://simple-admission-server.vercel.app/users/email/${
             user?.email
               ? user?.email
               : firebaseUser?.email

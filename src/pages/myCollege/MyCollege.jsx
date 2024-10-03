@@ -37,7 +37,7 @@ const MyCollege = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/allColleges/nameOfCollege/${user?.collegeName}`
+        `https://simple-admission-server.vercel.app/allColleges/nameOfCollege/${user?.collegeName}`
       )
       .then((data) => setMyCollege(data.data));
   }, [user?.collegeName]);

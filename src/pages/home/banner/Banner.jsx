@@ -10,7 +10,9 @@ const Banner = () => {
   const { setCollegeData } = useContext(AuthContext);
 
   const onSubmit = async (data) => {
-    fetch(`http://localhost:5000/allColleges?collegeName=${data.collegeName}`)
+    fetch(
+      `https://simple-admission-server.vercel.app/allColleges?collegeName=${data.collegeName}`
+    )
       .then((res) => res.json())
       .then((data) => setCollegeData(data));
 

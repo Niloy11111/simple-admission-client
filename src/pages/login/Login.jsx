@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -15,7 +15,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [toogle, setToogle] = useState(true);
-
+  const githubEmailRef = useRef();
   const [showPassword, setShowPassword] = useState(false);
   const [users, , refetch] = useUsers();
   const handleRegsiter = async (e) => {
@@ -166,6 +166,77 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
 
+  const handleGithubLogin = () => {
+    const inputValue = githubEmailRef.current.value;
+
+    // Simple email validation regex
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailPattern.test(inputValue)) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Invalid email",
+        text: "Please enter a valid email address",
+      });
+      return;
+    }
+
+    githubSignIn()
+      .then((res) => {
+        navigate("/");
+        console.log(res.user);
+        new Swal("Login Successful!", "success");
+        const user = {
+          photoURL: res?.user?.photoURL,
+          name: res?.user?.displayName,
+          email: inputValue,
+          password: "",
+          address: "",
+          number: "",
+          subject: "",
+          birthDate: "",
+          collegeName: null,
+          collegeImage: "",
+          admissionDate: "",
+          admissionProcess: "",
+          events: "",
+          researchHistory: "",
+          sports: "",
+          sportsCategories: "",
+          researchWorks: "",
+          collegeRating: "",
+          numberOfResearch: "",
+        };
+
+        const exist = users.find((item) => item.email === user.email);
+
+        if (exist) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "already exist",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          axiosPublic
+            .post("/users", user)
+            .then((data) => {
+              if (data.data.insertedId) {
+                navigate("/login");
+                refetch();
+                setUser(user);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
   if (toogle) {
     return (
       <>
@@ -186,7 +257,7 @@ const Login = () => {
                     </div>
                   </div>
                   <div
-                    onClick={() => githubSignIn()}
+                    onClick={handleGithubLogin}
                     className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
                   >
                     <div className="flex items-center gap-2">
@@ -310,12 +381,56 @@ const Login = () => {
                 <h2 className="mb-2 text-textColor uppercase    text-3xl font-extrabold text-center">
                   Log In
                 </h2>
-                <div
-                  onClick={handleGoogleLogin}
-                  className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
-                >
-                  <div className="flex items-center gap-2">
-                    <FcGoogle className="text-2xl"></FcGoogle>
+                <div className="flex gap-4">
+                  <div
+                    className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
+                    onClick={() =>
+                      document.getElementById("my_modal_1").showModal()
+                    }
+                  >
+                    <div className="flex items-center gap-2">
+                      <FaGithub className="text-2xl"></FaGithub>
+                    </div>
+                  </div>
+
+                  <dialog id="my_modal_1" className="modal">
+                    <div>
+                      <div className="modal-box">
+                        <input
+                          id="githubEmail"
+                          className="modalField"
+                          required
+                          type="email"
+                          required
+                          placeholder="Your Name"
+                          ref={githubEmailRef}
+                        />
+
+                        <button
+                          onClick={handleGithubLogin}
+                          className="mt-5 buttonOrange px-5 py-2 rounded-lg"
+                          type="submit"
+                        >
+                          Submit
+                        </button>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            <button className="btn text-white btn-sm btn-accent">
+                              Close
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </dialog>
+
+                  <div
+                    onClick={handleGoogleLogin}
+                    className="rounded-xl cursor-pointer max-w-max mx-auto  justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border border-[#C5C5C5] bg-[#FFF]"
+                  >
+                    <div className="flex items-center gap-2">
+                      <FcGoogle className="text-2xl"></FcGoogle>
+                    </div>
                   </div>
                 </div>
 

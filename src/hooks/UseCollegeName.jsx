@@ -14,7 +14,7 @@ const UseMyCollege = () => {
     queryKey: ["mycollege"],
     queryFn: async () => {
       const res = await axiosPublic.get(
-        `http://localhost:5000/candidateInfoEmail?email=${user?.email}`
+        `https://simple-admission-server.vercel.app/candidateInfoEmail?email=${user?.email}`
       );
       return res.data;
     },
