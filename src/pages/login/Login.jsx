@@ -1,36 +1,30 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../authProvider/AuthProvider";
+import UseAuth from "../../hooks/UseAuth";
+import useAxiosPublic from "../../hooks/UseAxiosPublic";
+import useUsers from "../../hooks/UseUsers";
 
 const Login = () => {
-  const {
-    signInUser,
-    createUser,
-    githubSignIn,
-    facebookSignIn,
-    googleSignIn,
-    handleUpdateProfile,
-  } = useContext(AuthContext);
-
+  const { githubSignIn, facebookSignIn, googleSignIn, setUser } = UseAuth();
+  const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
 
-  //   console.log(user)
   const [toogle, setToogle] = useState(true);
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleLogin = (e) => {
+  const [users, , refetch] = useUsers();
+  const handleRegsiter = async (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const email = form.get("email");
     const password = form.get("password");
-    const photo = form.get("photo-url");
+    const photoURL = form.get("photo-url");
     const accepted = e.target.terms.checked;
 
     if (!/^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
@@ -42,36 +36,78 @@ const Login = () => {
     } else if (!accepted) {
       new Swal("Sorry !", " please accept our terms and conditions !", "error");
     } else {
-      createUser(email, password)
-        .then((res) => {
-          console.log(res.user);
-          new Swal(
-            "Thank you!",
-            "You have successfully completed your registration!",
-            "success"
-          );
-          navigate("/");
-          handleUpdateProfile(name, photo).then(() => {
-            console.log("user created");
+      const user = {
+        photoURL,
+        name,
+        email,
+        password,
+        address: "",
+        number: "",
+        subject: "",
+        birthDate: "",
+        collegeName: null,
+        collegeImage: "",
+        admissionDate: "",
+        admissionProcess: "",
+        events: "",
+        researchHistory: "",
+        sports: "",
+        sportsCategories: "",
+        researchWorks: "",
+        collegeRating: "",
+        numberOfResearch: "",
+      };
+      const exist = users.find((item) => item.email === user.email);
+
+      if (exist) {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "already exist",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        await axiosPublic
+          .post("/users", user)
+          .then((data) => {
+            if (data.data.insertedId) {
+              refetch();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Registered Successfully, Login Please",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/login");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
           });
-        })
-        .catch((error) => console.log(error));
+      }
     }
+    e.currentTarget.reset();
   };
 
   const handleSignInUser = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-
     const email = form.get("email");
     const password = form.get("password");
-
-    signInUser(email, password)
-      .then((res) => {
-        navigate("/");
-        console.log(res.user);
-      })
-      .catch((error) => console.log(error));
+    const currentUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+    const isExist =
+      currentUser?.email === email && currentUser.password === password;
+    if (isExist) {
+      setUser(currentUser);
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -80,6 +116,52 @@ const Login = () => {
         navigate("/");
         console.log(res.user);
         new Swal("Login Successful!", "Welcome back!", "success");
+        const user = {
+          photoURL: res?.user?.photoURL,
+          name: res?.user?.displayName,
+          email: res?.user?.email,
+          password: "",
+          address: "",
+          number: "",
+          subject: "",
+          birthDate: "",
+          collegeName: null,
+          collegeImage: "",
+          admissionDate: "",
+          admissionProcess: "",
+          events: "",
+          researchHistory: "",
+          sports: "",
+          sportsCategories: "",
+          researchWorks: "",
+          collegeRating: "",
+          numberOfResearch: "",
+        };
+
+        const exist = users.find((item) => item.email === user.email);
+
+        if (exist) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "already exist",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          axiosPublic
+            .post("/users", user)
+            .then((data) => {
+              if (data.data.insertedId) {
+                navigate("/login");
+                refetch();
+                setUser(user);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -90,7 +172,7 @@ const Login = () => {
         <div className="mt-20  flex lg:flex-row flex-col-reverse justify-center gap-14 lg:gap-20">
           <div className="flex-1">
             <div className="lg:w-5/6 mx-auto">
-              <form onSubmit={handleLogin} className=" rounded  ">
+              <form onSubmit={handleRegsiter} className=" rounded  ">
                 <h2 className="mb-2 text-textColor uppercase    text-3xl  font-extrabold text-center">
                   Create account
                 </h2>
@@ -139,7 +221,7 @@ const Login = () => {
                   />
 
                   <div className="flex lg:flex-row flex-col lg:gap-3">
-                    <div>
+                    <div className="w-full">
                       <input
                         className="border-[#C5C5C5] bg-[#FFF]  py-3 outline-none w-full mx-auto border b block pl-2 pb-3 mb-5"
                         type="email"
@@ -149,11 +231,11 @@ const Login = () => {
                       />
                     </div>
 
-                    <div className="relative mb-5">
+                    <div className="w-full relative mb-5">
                       <input
                         type={showPassword ? "text" : "password"}
                         placeholder="password"
-                        className="input border border-[#C5C5C5]  py-3 outline-none block pl-2 pb-3  bg-[#FFF] w-full mx-auto"
+                        className=" border border-[#C5C5C5]  py-3 outline-none block pl-2 pb-3  bg-[#FFF] w-full mx-auto"
                         name="password"
                         required
                       />
@@ -272,7 +354,16 @@ const Login = () => {
                   </a>{" "}
                 </p>
 
-                <p>For</p>
+                <div className="flex gap-3 justify-center">
+                  <p>Forgot Password ? </p>{" "}
+                  <Link
+                    to={`/passwordReset`}
+                    className="text-textColor font-semibold cursor-pointer"
+                  >
+                    Reset
+                  </Link>{" "}
+                  <br />
+                </div>
               </form>
             </div>
           </div>

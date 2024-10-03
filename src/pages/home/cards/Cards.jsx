@@ -7,7 +7,6 @@ const Cards = () => {
   const [colleges] = UseColleges();
   const { user, logOut, collegeData } = useContext(AuthContext);
 
-  console.log("i am", collegeData.length);
   return (
     <div>
       <h1 className="headTitle ">
@@ -15,8 +14,10 @@ const Cards = () => {
       </h1>
       <div>
         {collegeData.length > 0
-          ? collegeData.map((item) => <Card card={item} />)
-          : colleges.slice(0, 3).map((item) => <Card card={item} />)}
+          ? collegeData.map((item) => <Card key={item?._id} card={item} />)
+          : colleges
+              .slice(0, 3)
+              .map((item) => <Card key={item?._id} card={item} />)}
       </div>
     </div>
   );

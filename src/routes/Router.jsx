@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import PasswordResetModal from "../components/passwordResetModal/PasswordResetModal";
 import Admission from "../pages/admission/Admission";
 import AllColleges from "../pages/allColleges/AllColleges";
 import CollegeDetails from "../pages/detailsPage/CollegeDetails";
@@ -28,9 +29,7 @@ export const router = createBrowserRouter([
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(
-            `https://simple-admission-server.vercel.app/allColleges/${params.id} `
-          ),
+          fetch(`http://localhost:5000/allColleges/${params.id}`),
         element: (
           <PrivateRoute>
             <CollegeDetails />
@@ -64,16 +63,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-
-      //   {
-      //     path: "/appliedJobs",
-      //     element: (
-      //       <PrivateRoute>
-      //         {" "}
-      //         <AppliedJob></AppliedJob>
-      //       </PrivateRoute>
-      //     ),
-      //   },
+      {
+        path: "/passwordReset",
+        element: <PasswordResetModal />,
+      },
     ],
   },
 ]);

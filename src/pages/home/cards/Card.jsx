@@ -26,8 +26,10 @@ const Card = ({ card }) => {
           <p className="buttonOrange">Admission {admissionDate}</p>
           <div className="">
             <h2 className="font-semibold my-2 text-xl">Types of Events</h2>
-            {events.map((event) => (
-              <span className=" mr-5">{event.name}</span>
+            {events.map((event, index) => (
+              <span key={index} className=" mr-5">
+                {event.name}
+              </span>
             ))}{" "}
           </div>
           <h2 className="font-semibold my-2 text-xl">Sports</h2>

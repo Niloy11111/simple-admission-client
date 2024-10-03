@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
@@ -7,6 +7,7 @@ import Research from "./research/Research";
 import Category from "./sportsCategory/Category";
 const CollegeDetails = () => {
   const collegeDetails = useLoaderData();
+
   const {
     _id,
     collegeName,
@@ -21,13 +22,13 @@ const CollegeDetails = () => {
     collegeRating,
     numberOfResearch,
   } = collegeDetails;
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
-      <div className="my-20  ">
-        <div className="flex gap-20 ">
+      <div className="my-20 ">
+        <div className="flex lg:flex-row flex-col gap-20 ">
           <div className="">
-            <img className="w-[700px]" src={collegeImage} alt="" />
+            <img className="lg:w-[700px]" src={collegeImage} alt="" />
           </div>
 
           <div className="space-y-2 ">
@@ -74,9 +75,9 @@ const CollegeDetails = () => {
             {collegeName} Events
           </h1>
 
-          <div className="mt-10 flex justify-center  gap-20 ">
-            {events.map((event) => (
-              <Event event={event} />
+          <div className="mt-10 flex lg:flex-row flex-col justify-center  gap-20 ">
+            {events.map((event, index) => (
+              <Event key={index} event={event} />
             ))}
           </div>
         </div>
@@ -86,19 +87,19 @@ const CollegeDetails = () => {
             {collegeName} Research Works
           </h1>
 
-          <div className="mt-10 flex justify-center  gap-20 ">
+          <div className="mt-10 flex lg:flex-row flex-col justify-center  gap-20 ">
             {researchWorks.map((research, index) => (
               <Research key={index} research={research} />
             ))}
           </div>
         </div>
 
-        <div className="mt-60 ">
+        <div className="mt-20 lg:mt-60 lg:mb-60 ">
           <h1 className=" text-3xl text-center font-semibold  ">
             {collegeName} Sports
           </h1>
 
-          <div className="mt-10 flex justify-center  gap-20 ">
+          <div className="mt-10  flex lg:flex-row flex-col justify-center  gap-20 ">
             {sportsCategories.map((category, index) => (
               <Category key={index} category={category} />
             ))}

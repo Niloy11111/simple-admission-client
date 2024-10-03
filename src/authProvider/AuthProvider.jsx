@@ -1,18 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 
+import axios from "axios";
 import {
   FacebookAuthProvider,
   GithubAuthProvider,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
   onAuthStateChanged,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
   signInWithPopup,
-  signOut,
-  updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import useAxiosPublic from "../hooks/UseAxiosPublic";
+import useUsers from "../hooks/UseUsers";
 
 export const AuthContext = createContext(null);
 
@@ -20,12 +18,16 @@ const AuthProvider = ({ children }) => {
   const googleprovider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
   const githubProvider = new GithubAuthProvider();
-  const [mycollege, setMyCollege] = useState([]);
+
   const [collegeData, setCollegeData] = useState([]);
   const [searchCollege, setSearchCollege] = useState("");
-
+  const [updatedCollege, setUpdatedCollege] = useState({});
+  const [users, , refetch] = useUsers();
   const [user, setUser] = useState(null);
+  const [firebaseUser, setFirebaseUser] = useState(null);
+
   const [loading, setLoading] = useState(true);
+  const axiosPublic = useAxiosPublic();
 
   const googleSignIn = () => {
     setLoading(true);
@@ -42,77 +44,51 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, facebookProvider);
   };
 
-  const createUser = (email, password) => {
-    setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
-  const updateUserProfile = (name) => {
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-    });
-  };
-
-  const signInUser = (email, password) => {
-    setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
-  const handleUpdateProfile = (name, photo) => {
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
-    });
-  };
-
-  const logOut = () => {
-    setLoading(true);
-    return signOut(auth);
-  };
-
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      setFirebaseUser(currentUser);
+
       setLoading(false);
     });
 
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [axiosPublic, refetch, users]);
 
   useEffect(() => {
-    if (user) {
-      fetch(
-        `https://simple-admission-server.vercel.app/candidateInfoEmail?email=${user?.email}`
-      )
-        .then((res) => res.json())
-        .then((data) => setMyCollege(data));
+    const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (storedUser) {
+      setUser(storedUser);
+    } else {
+      axios
+        .get(
+          `http://localhost:5000/users/email/${
+            user?.email
+              ? user?.email
+              : firebaseUser?.email
+              ? firebaseUser?.email
+              : "hello@hello.com"
+          }`
+        )
+        .then((data) => setUser(data?.data));
     }
-  }, [user?.email, user]);
-
-  const resetPass = (email) => {
-    return sendPasswordResetEmail(auth, email);
-  };
-
-  console.log(searchCollege);
+  }, [user?.email, firebaseUser?.email]);
 
   const AuthInfo = {
     user,
     loading,
-    createUser,
-    signInUser,
-    logOut,
     googleSignIn,
-    handleUpdateProfile,
-    mycollege,
-    updateUserProfile,
-    resetPass,
+    firebaseUser,
     facebookSignIn,
     githubSignIn,
     setSearchCollege,
     searchCollege,
     setCollegeData,
     collegeData,
+    setUpdatedCollege,
+    updatedCollege,
+    setUser,
   };
 
   return (

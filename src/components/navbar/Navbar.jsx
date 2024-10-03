@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { signOut } from "firebase/auth";
 import { FaBars } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../authProvider/AuthProvider";
+import { auth } from "../../firebase/firebase.config";
+import UseAuth from "../../hooks/UseAuth";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, firebaseUser, setUser } = UseAuth();
   const navigate = useNavigate();
 
-  console.log(user);
+  console.log(firebaseUser);
 
   const navlinksBeforeLogin = (
     <>
@@ -120,36 +121,13 @@ const NavBar = () => {
           MY COLLEGE
         </NavLink>
       </li>
-
-      {/* <li>
-        <div className="dropdown hidden lg:block dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-[60px] rounded">
-              <img src={user?.photoURL} alt={user?.displayName} />
-            </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <button className="btn btn-sm  btn-ghost">
-                {user?.displayName}
-              </button>
-            </li>
-            <li>
-              <button className="btn btn-sm  btn-ghost" onClick={logOut}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </li> */}
     </>
   );
 
   const handleLogOut = () => {
-    logOut();
+    signOut(auth);
+    setUser(null);
+    localStorage.removeItem("currentUser");
     navigate("/");
   };
 
@@ -164,7 +142,7 @@ const NavBar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#F7F7F7] w-52 text-textColor absolute -left-[120px] -top-5 "
           >
-            {user ? navLinks : navlinksBeforeLogin}
+            {user || firebaseUser ? navLinks : navlinksBeforeLogin}
           </ul>
         </div>
 
@@ -182,18 +160,18 @@ const NavBar = () => {
 
       <div className="flex  items-center hidden lg:block    p-3 rounded">
         <ul className=" lg:flex gap-3 ">
-          {user ? navLinks : navlinksBeforeLogin}
+          {user || firebaseUser ? navLinks : navlinksBeforeLogin}
         </ul>
       </div>
 
       <div className="">
-        {user ? (
+        {user || firebaseUser ? (
           <div className="dropdown  lg:block dropdown-end">
             <div className="flex gap-3 items-center">
               <div className="">
                 <Link to={`/profile`}>
                   <h2 className="  cursor-pointer font-semibold">
-                    {user?.displayName}
+                    {!user ? firebaseUser?.displayName : user?.name}
                   </h2>
                 </Link>
               </div>
@@ -207,14 +185,6 @@ const NavBar = () => {
                 </button>
               </div>
             </div>
-            {/* <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-1 z-[1] p-2 shadow rounded-box bg-[#F7F7F7]  "
-            >
-              <li className="  py-1 px-1 rounded-xl   text-center">
-                {user?.displayName}
-              </li>
-            </ul> */}
           </div>
         ) : (
           <button className="mt-1">
